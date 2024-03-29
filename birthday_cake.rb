@@ -38,28 +38,37 @@ class BirthdayCake
   end
 
   def greet
-    "Happy #{self.age.ordinalize} Birdday!"
+    "Happy #{self.age.ordinalize} Birthday!"
   end
 
   def sing
     "🎶Happy birthday to you, happy birthday to you🎶"
   end
 
+  def lit_candles
+    self.lit = true
+  end
+
+  def blown_out
+    self.lit = false
+  end
+
   def to_s
     "Birthday cake with #{self.age} #{candles_status} candles"
   end
+  
 
   def BirthdayCake.celebrate(age)
     birthday_cake = BirthdayCake.new(age)
     puts birthday_cake.greet
     puts birthday_cake.to_s
     puts "Lighting candles..."
-    birthday_cake.candles_status
+    birthday_cake.lit_candles
     puts birthday_cake.to_s
     puts "Singing happy birthday..."
     puts birthday_cake.sing
     puts "Blowing out candles..."
-    birth_cake.blow_out_candles
+    birthday_cake.blown_out
     puts birthday_cake.to_s
 
     birthday_cake
